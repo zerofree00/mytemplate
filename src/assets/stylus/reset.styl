@@ -1,0 +1,331 @@
+@import "./mixin.styl"
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+ u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font-weight: normal
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */ 
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+/* custom */
+
+a
+  color: #7e8c8d
+  -webkit-backface-visibility: hidden
+  text-decoration: none
+
+li
+  list-style: none
+
+i,b
+  font-style: normal
+
+body
+  -webkit-text-size-adjust: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+// vant公共样式  头部
+.van-nav-bar
+  width 100%
+  height 46px
+  pos(0,0,0,0,0,99)
+.van-nav-bar .van-icon
+  color #222
+  font-size: 22px!important
+.van-nav-bar .iconfont 
+  color #222
+.van-tab__text,.van-nav-bar__right,.van-nav-bar__left
+  font-weight 700
+  font-size: 17px
+.van-tabs__wrap
+  border-bottom 1px solid #f8f8f8
+.van-tabs__wrap
+  pos(46px, 0, 0 ,0 ,0,99)
+.van-tabs
+  padding-top 100px!important  
+.van-progress
+  margin 10px 0 0px
+.van-nav-bar__right
+    i
+      font-size 22px
+      margin-left 15px
+      display inline-block
+      vertical-align middle
+
+.ql-container
+  height 200px!important
+// .van-uploader__wrapper
+//   margin 0 10px
+.van-pull-refresh 
+  min-height calc(100vh - 150px)
+
+
+.arrow-left
+  font-size 16px
+  vertical-align middle
+  margin-top -3px
+.header_title
+  font-weight bold
+  font-size 18px
+  margin-left 10px
+.fuAffix
+    font(14px, 40px)
+    vertical-align middle
+    color #999999
+    i
+      vertical-align middle
+      margin-right 4px
+
+
+// 收文----首页
+.getInfomation_index .van-tabs .van-tabs__line
+  background-color #137cfc
+  width 20.5px!important
+.getInfomation_index .van-tabs .van-tab--active
+  color #137cfc
+.getInfomation_index .van-tab
+  font-size 16px
+.getInfomation_index .van-tabs
+  padding-top 46px
+.getInfomation_index 
+  .van-tabs__wrap
+    height 55px
+    .van-tab
+     .van-tab__text
+       padding 10px 0
+
+// 办文
+.department_index .van-tabs .van-tabs__line
+  background-color #137cfc
+  width 20.5px!important
+.department_index .van-tabs .van-tab--active
+  color #137cfc
+.department_index .van-tab
+  font-size 16px
+.department_index .van-tabs
+  padding-top 46px
+.department_index 
+  .van-tabs__wrap
+    height 55px
+    .van-tab
+     .van-tab__text
+       padding 10px 0
+.record_depart
+  .van-tab__text
+    width 75%
+    .record_tab
+      text-align center
+
+// 收文---附件
+.getInfomation_atch .van-nav-bar__left
+.getInfomation_atch .van-nav-bar__right
+.email_index .van-nav-bar__left
+.email_index .van-nav-bar__right
+    color #137cfc
+  
+// 发文 ---编辑
+.van-cell
+  padding 13px 16px
+.post_edit_body .van-cell
+  font-size 16px
+
+// 单选按钮组
+.post_edit_main .van-radio
+  position relative
+  height 28px
+
+  .van-radio__icon
+    pos(0,0,0,0,1,10)
+    height 100%
+    width 100%
+    background #ffffff
+    border 1px solid #dddddd
+    border-radius 3px
+    
+  .van-radio__icon--checked
+    background #137cfc
+    border-color #137cfc
+  .van-icon
+      display none
+  .van-radio__label 
+    font-size 14px
+    position relative
+    z-index 11
+    color #999
+    margin-left 0 
+    padding 0 10px
+  &[aria-checked="true"]
+    .van-radio__label 
+      color #ffffff
+
+
+// 复选按钮组
+.post_edit_main .van-checkbox
+  position relative
+  height 28px
+  margin-right 10px
+  .van-checkbox__icon
+    pos(0,0,0,0,1,10)
+    height 100%
+    width 100%
+    background #ffffff
+    border 1px solid #dddddd
+    border-radius 3px
+  .van-checkbox__icon--checked
+    // background #137cfc
+    border-color #137cfc
+  .van-icon
+    position absolute
+    right 0
+    top 0 
+    height 100%
+    color #ffffff
+    background #dcdcdc
+    border none 
+    border-radius 0
+    line-height 26px
+  .van-checkbox__label
+    font-size 12px
+    position relative
+    z-index 11
+    color #999
+    margin-left 0 
+    padding 0 26px 0 10px
+  &[aria-checked="true"]
+    .van-checkbox__label
+      color #137cfc
+    .van-icon 
+      background #137cfc
+
+
+// 分发记录的tab
+.record_content
+  .van-tabs__wrap
+      padding 10px 0
+      height 60px
+      background #f7f7f7
+  .van-tabs__nav
+      background-color transparent
+  .van-tabs__line
+    height 0
+    background-color transparent
+  
+  .van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after
+    border-width:  0;
+  .van-tabs__content--animated
+    overflow: visible
+  
+// 下拉菜单
+.search_box
+  .van-dropdown-menu__bar
+    height 30px
+    background-color transparent
+    box-shadow none
+  .van-dropdown-menu__title::after
+    border-color: transparent transparent #999999 #999999;
+  .van-search
+    padding 0 10px 0 0
+    background-color transparent 
+    .van-search__content
+      background-color transparent 
+      .van-cell
+        padding 0
+        height 30px
+        line-height 30px
+
+// 邮件首页
+.email_index .van-nav-bar__left
+.email_index .van-nav-bar__right
+  font-size: 16px
+.email_index
+  .van-nav-bar
+    .van-dropdown-menu__bar
+      box-shadow none
+      height 46px
+  .van-dropdown-item__icon
+    color: #1989fa;
+  .van-dropdown-menu__title
+      .van-ellipsis
+        font-weight 700
+        font-size 18px
+      &::after
+        opacity: 1;
+        border-color: transparent transparent #aaa #aaa;
+  .van-dropdown-menu__title--active::after 
+    border-color transparent transparent #1989fa #1989fa
+  .search_box
+    .van-dropdown-menu__title
+      .van-ellipsis
+        font-weight 400
+        font-size 15px
+
+
+.email_edit
+  .quillEditor
+      width 100%
+      .edit_container
+          height 100%
+  .van-cell
+    .van-cell__title
+      font-size 16px
+  .van-notice-bar
+    width 100%
+    position absolute!important
+    background-color #fff
+    color #000
+    top 0
+    right 0
+    height 100%
+
+.sign_body
+  .van-notice-bar
+    width 80%
+    position absolute!important
+    background-color #fff
+    color #000
+    top 0
+    right 0
+    height 100%
+
+.van-picker-column__item
+    height 44Px
+    padding 0 4Px
+
+// 重置tag
+.van-tag
+  font-size 12px

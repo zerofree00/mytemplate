@@ -1,58 +1,68 @@
- 
-# gulp pug stylus gulp-html-tpl
+# OA R&V
 
-glup 3.0
+同一个框架搭建两个项目，使用 vue 的多页面打包配置，分别打包出来
 
-#### 安装
-
-```
-npm i
+## Project setup
 
 ```
+npm install
+```
 
-#### 启动 1 ， 使用jade模板
+### Compiles and hot-reloads for development
 
 ```
-npm run all
+npm run serve
 ```
- 
 
-## jade 
-* src/view/view文件下的html是分开的
-* src/view/main文件下的html是合并的 
+### Compiles and minifies for production
 
-## gulp-html-tpl  
-* src/htmltpl/ 文件下的html没有使用jade模板
+```
+npm run build
+```
 
+### Lints and fixes files
 
+```
+npm run lint
+```
 
-## 遇到的问题
+### Customize configuration
 
-### 关于“primordials is not defined”报错的解决办法
-   
-也许是因为你的gulp版本v3，node版本v12。
+See [Configuration Reference](https://cli.vuejs.org/config/).
 
-* 解决方法：
-  - 将gulp版本升级到v4。
-  - 将node版本降级到v11。
-  - 将graceful-fs升级到在node v12+下工作的版本4.2.2(推荐)。
+### 启动项目怎么切换两个项目
 
-* 推荐解决办法：
+```
+OAV版本，路由开头直接 / 访问
 
-  1. 在package.json同级目录下新建文件npm-shrinkwrap.json，输入以下内容：
+OAR版本，路由开头添加 oar/ 访问
+```
 
-    ```
-{
-    "dependencies": {
-        "graceful-fs": {
-            "version": "4.2.2"
-        }
-    }
-}
-    ```
+### 根据打包命令不同，修改打包出来的接口环境
 
-  2. npm install
+```
+文件名： .env.local  打包本地环境
+文件名： .env.test  打包测试环境
+文件名： .env.production  打包生产环境
+```
 
+### 多页面配置
 
-## 注意点
-dist、dist2文件夹不能丢失
+```
+同一个框架，包含两个项目，使用多页面配置，分别打包出来
+package.json 文件里面
+
+以oav结尾的是OAV版本
+"build-oav": "vue-cli-service build index",
+"local-oav": "vue-cli-service build index --mode local",
+"test-oav": "vue-cli-service build index --mode test",
+
+以oar结尾的是OAr版本
+"build-oar": "vue-cli-service build oar",
+"test-oar": "vue-cli-service build oar --mode test",
+"local-oar": "vue-cli-service build oar --mode local",
+
+打包出来的文件，
+oar 以oar.html为开始页面
+oav index.html为开始页面
+```
